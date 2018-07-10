@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * TaskComment
@@ -32,6 +33,13 @@ class TaskComment
 	 * @ORM\Column(name="content", type="string")
 	 */
     protected $content;
+
+	/**
+	 * @var \DateTime
+	 *
+	 * @ORM\Column(name="created_at", type="datetime")
+	 */
+    protected $createdAt;
 
 
     /**
@@ -90,5 +98,29 @@ class TaskComment
     public function getTask()
     {
         return $this->task;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return TaskComment
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 }

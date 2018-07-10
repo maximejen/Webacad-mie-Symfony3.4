@@ -40,6 +40,18 @@ class Task
 	 * @ORM\OneToMany(targetEntity="AppBundle\Entity\TaskComment", mappedBy="task", cascade={"persist"})
 	 */
     protected $comments;
+	/**
+	 * @var string
+	 *
+	 * @ORM\Column(name="description", type="string")
+	 */
+    protected $description;
+	/**
+	 * @var \DateTime
+	 *
+	 * @ORM\Column(name="created_at", type="datetime")
+	 */
+    protected $createdAt;
 
     /**
      * Get id
@@ -139,5 +151,53 @@ class Task
     public function getComments()
     {
         return $this->comments;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Task
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Task
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 }

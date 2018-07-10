@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tasks list</h1>
+    <a href="{{ path("create_task") }}">Add a Task</a>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.getName() }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Create Task</h1>
+    {% if form is defined %}
+        {{ form_start(form) }}
+        {{ form_row(form.name,
+            {
+                'label': 'Your Name',
+                'label_attr': {'class': 'blue salut'}
+            }
+        ) }}{# add a class to a label #}
+        {{ form_rest(form) }}
+        <button type="submit">
+            Submit
+        </button>
+        {{ form_end(form) }}
+    {% endif %}
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+
